@@ -1,0 +1,36 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* resetCSS */
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/** variable **/
+:root {
+    --color--background: #E9ECF8;
+}
+
+
+body {
+    background-color: var(--color--background);
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 40px;
+
+    display: flex;
+}
+
+.nav__main {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
