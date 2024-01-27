@@ -14,6 +14,8 @@
 /** variable **/
 :root {
     --color--background: #E9ECF8;
+    --color-prymary: #0A3871;
+    --color-secondary: #ffffff;
 }
 
 
@@ -33,4 +35,70 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 40px;
+}
+
+.section__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid salmon;
+    width: 60%;
+    justify-content: space-evenly;
+}
+
+.section__text__area {
+    width: 90%;
+    height: 600px;
+    box-sizing: border-box;
+    border: 1px solid salmon;
+    background-color: var(--color--background);
+    color: var(--color-prymary);
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav__encoding {
+    border: 1px solid salmon;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav__encoding p {
+    width: 100%;
+    padding: 5px;
+}
+
+.btn-criptografar {
+    width: 45%;
+    height: 60px;
+    border-radius: 24px;
+    background-color: var(--color-prymary);
+    color: var(--color--background);
+    text-align: center;
+    line-height: 60px;
+}
+
+.btn-descriptografar {
+    width: 45%;
+    border: 1px solid var(--color-prymary);
+    height: 60px;
+    border-radius: 24px;
+    background-color: var(--color--background);
+    color: var(--color--prymary);
+    text-align: center;
+    line-height: 60px;
+}
+
+.aside__output {
+    width: 400px;
+    min-height: 100%;
+    background-color: var(--color-secondary);
+    border-radius: 24px;
+    box-shadow: 10px 10px 10px 10px #d7e0e7;
+    color: var(--color-prymary);
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
 }
