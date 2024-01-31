@@ -194,6 +194,23 @@ body {
   }
 }
 
+@media screen and (max-width: 602px) {
+  .nav__main__row-menu {
+    display: none;
+  }
+
+  .section__text {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .section__text__area {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+
 /** MEDIA QUERIES **/
 @media screen and (max-width: 378px) {
   body {
@@ -205,6 +222,10 @@ body {
   .nav__main {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .nav__main__row-menu {
+    display: none;
   }
 
   .nav__main__column-menu {
