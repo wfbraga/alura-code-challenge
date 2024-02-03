@@ -16,6 +16,7 @@
   --color--background: #E9ECF8;
   --color-prymary: #0A3871;
   --color-secondary: #ffffff;
+  --color-shadow: #d8d4d4;
 }
 
 
@@ -27,6 +28,8 @@ body {
   display: flex;
   justify-content: center;
 }
+
+
 
 .nav__main {
   display: flex;
@@ -124,7 +127,7 @@ body {
   text-align: center;
   background-color: var(--color-secondary);
   border-radius: 24px;
-  box-shadow: 10px 10px 10px 10px #d7e0e7;
+  box-shadow: 10px 10px 10px 10px var(--color--background);
   color: var(--color-prymary);
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
@@ -136,11 +139,98 @@ body {
   padding-right: 5px;
 }
 
-.aside__search-person {}
-
 .aside__encoded-text {
   visibility: hidden;
   text-align: justify;
+}
+
+/** SLIDE BUTTONS **/
+.slide__container {
+  background-color: var(--color--background);
+  box-shadow: 0 5px 5px 1px var(--color-shadow);
+  border-radius: 60px;
+  align-items: center;
+  justify-content: center;
+  max-width: 90px;
+  min-width: 90px;
+  min-height: 130px;
+
+  display: flex;
+  padding: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 100px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-prymary);
+  background-image: url('/assets/moon-solid.png');
+  background-position: center;
+  background-position-y: 15%;
+  background-repeat: no-repeat;
+
+  background-size: 40%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 10px;
+  bottom: 8px;
+  background-color: var(--color-secondary);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: var(--color-secondary);
+  background-image: url('/assets/sun-regular.png');
+  background-position: center;
+  background-position-y: 80%;
+  background-repeat: no-repeat;
+}
+
+input:checked+.slider:before {
+  background-color: var(--color-prymary);
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px var(--color-prymary);
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateY(26px);
+  -ms-transform: translateY(26px);
+  transform: translateY(-42px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /** MEDIA QUERIES **/

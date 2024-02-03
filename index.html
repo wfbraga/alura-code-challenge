@@ -7,6 +7,7 @@
   <title>Alura Challenge</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js"></script>
+  <script src="https://kit.fontawesome.com/571a766a70.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,8 +18,20 @@
         fill="#0A3871" />
     </svg>
     <div class="nav__main__column-menu">
-      <img src="assets/Menu.png" alt="Menu 1">
-      <img src="assets/Menu.png" alt="Menu 1">
+      <div class="slide__container">
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="slide__container">
+        <label class="switch">
+          <input type="checkbox" id="lenguageSwitch">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
     </div>
     <div class="nav__main__row-menu">
       <img src="assets/menu_in_row.png" alt="Menu 1">
@@ -26,12 +39,13 @@
     </div>
   </nav>
   <section class="section__text">
-    <textarea name="text__input" class="section__text__area" id="workText">Digite seu texto aqui...</textarea>
+    <textarea name="text__input" class="section__text__area" id="inputText"
+      placeholder="Digite seu texto aqui"></textarea>
 
     <nav class="nav__encoding">
       <p><small>Apenas lestas minusculas e sem acento</small></p>
-      <button onclick="encodeText()" class="btn-criptografar">Criptografar</button>
-      <button ondblclick="decodeText()" class="btn-descriptografar">Descriptografar</button>
+      <button id="btnEncode" class="btn-criptografar">Criptografar</button>
+      <button id="btnDecode" class="btn-descriptografar">Descriptografar</button>
     </nav>
 
   </section>
@@ -45,7 +59,7 @@
       <h2><strong>Nenhuma Mensagem Encontrada</strong></h2>
       <p>Escreva uma mensagem que queira codificar ou decodificar</p>
     </div>
-    <button onclick="copyToClipboard()" class="btn-copiar" id="btnCopiar">Copiar</button>
+    <button id="btnCopy" onclick="copyToClipboard()" class="btn-copiar" id="btnCopiar">Copiar</button>
   </aside>
 
 </body>
