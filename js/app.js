@@ -28,18 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     copy: 'Copiar',
   }
 
-  /** LANGUAGE SWITCH **/
+  /** LANGUAGE SWITCH **
+  const languageSwitchEl = document.getElementById('languageSwitch');
 
-
-
-
-
-  /** THEME SWITCH **/
-
-  const themeSwitchEl = document.getElementById('themeSwitch');
-  const rootEl = document.documentElement;
-
-  function switchTheme(e) {
+  function switchLanguage(e) {
     if (e.target.checked) {
       rootEl.style.setProperty('--color--background', '#1058af');
       rootEl.style.setProperty('--color-prymary', '#ffffff');
@@ -51,6 +43,43 @@ document.addEventListener("DOMContentLoaded", function () {
       rootEl.style.setProperty('--color-prymary', '#0A3871');
       rootEl.style.setProperty('--color-secondary', '#ffffff');
       rootEl.style.setProperty('--color-shadow', '#d8d4d4');
+    }
+  }
+  languageSwitchEl.addEventListener('change', switchLanguage, false);
+  inputText
+  warning
+  btnEncode
+  btnDecode
+  noMessageFound
+  writeTextMessage
+  btnCopy
+
+  ** THEME SWITCH **/
+
+  const themeSwitchEl = document.getElementById('themeSwitch');
+  const rootEl = document.documentElement;
+  const languageSwitchClass = document.querySelector('.slider-language');
+  const languageSwitchClassDark = document.querySelector('input:checked+.slider-language');;
+
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      rootEl.style.setProperty('--color--background', '#1058af');
+      rootEl.style.setProperty('--color-prymary', '#ffffff');
+      rootEl.style.setProperty('--color-secondary', '#0A3871');
+      rootEl.style.setProperty('--color-shadow', '#0A3871');
+      languageSwitchClass.style.backgroundImage = 'url("/assets/es-lang-0a3871.png")';
+      languageSwitchClassDark.style.backgroundImage = 'url("/assets/pt-lang-ffffff.png")';
+
+
+    }
+    else {
+      rootEl.style.setProperty('--color--background', '#E9ECF8');
+      rootEl.style.setProperty('--color-prymary', '#0A3871');
+      rootEl.style.setProperty('--color-secondary', '#ffffff');
+      rootEl.style.setProperty('--color-shadow', '#d8d4d4');
+      languageSwitchClass.style.backgroundImage = 'url("/assets/es-lang-ffffff.png")';
+      languageSwitchClassDark.style.backgroundImage = 'url("/assets/pt-lang-0a3871.png")';
     }
   }
   themeSwitchEl.addEventListener('change', switchTheme, false);

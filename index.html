@@ -21,16 +21,17 @@
       <div class="slide__container">
         <label class="switch">
           <input type="checkbox" id="themeSwitch">
-          <span class="slider round"></span>
+          <span class="slider round slider-theme"></span>
         </label>
       </div>
 
       <div class="slide__container">
         <label class="switch">
           <input type="checkbox" id="lenguageSwitch">
-          <span class="slider round"></span>
+          <span class="slider round slider-language"></span>
         </label>
       </div>
+    </div>
 
     </div>
     <div class="nav__main__row-menu">
@@ -43,7 +44,7 @@
       placeholder="Digite seu texto aqui"></textarea>
 
     <nav class="nav__encoding">
-      <p><small>Apenas lestas minusculas e sem acento</small></p>
+      <p><small id="warning">Apenas lestas minusculas e sem acento</small></p>
       <button id="btnEncode" class="btn-criptografar">Criptografar</button>
       <button id="btnDecode" class="btn-descriptografar">Descriptografar</button>
     </nav>
@@ -56,8 +57,8 @@
       <p class="aside__encoded-text" id="outputPlace"></p>
     </div>
     <div id="initialMessage">
-      <h2><strong>Nenhuma Mensagem Encontrada</strong></h2>
-      <p>Escreva uma mensagem que queira codificar ou decodificar</p>
+      <h2><strong id="noMessageFound">Nenhuma Mensagem Encontrada</strong></h2>
+      <p id="writeTextMessage">Escreva uma mensagem que queira codificar ou decodificar</p>
     </div>
     <button id="btnCopy" onclick="copyToClipboard()" class="btn-copiar" id="btnCopiar">Copiar</button>
   </aside>

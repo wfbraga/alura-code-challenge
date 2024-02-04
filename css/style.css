@@ -19,7 +19,6 @@
   --color-shadow: #d8d4d4;
 }
 
-
 body {
   background-color: var(--color--background);
   min-width: 100vw;
@@ -28,8 +27,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
-
 
 .nav__main {
   display: flex;
@@ -180,7 +177,6 @@ body {
   right: 0;
   bottom: 0;
   background-color: var(--color-prymary);
-  background-image: url('/assets/moon-solid.png');
   background-position: center;
   background-position-y: 15%;
   background-repeat: no-repeat;
@@ -188,6 +184,14 @@ body {
   background-size: 40%;
   -webkit-transition: .4s;
   transition: .4s;
+}
+
+.slider-theme {
+  background-image: url('/assets/moon-solid.png');
+}
+
+.slider-language {
+  background-image: url('/assets/es-lang-ffffff.png');
 }
 
 .slider:before {
@@ -204,19 +208,24 @@ body {
 
 input:checked+.slider {
   background-color: var(--color-secondary);
-  background-image: url('/assets/sun-regular.png');
   background-position: center;
   background-position-y: 80%;
   background-repeat: no-repeat;
+}
+
+input:checked+.slider-theme {
+  background-image: url('/assets/sun-regular.png');
+}
+
+input:checked+.slider-language {
+  background-image: url('/assets/br-lang-0a3871.png');
 }
 
 input:checked+.slider:before {
   background-color: var(--color-prymary);
 }
 
-input:focus+.slider {
-  box-shadow: 0 0 1px var(--color-prymary);
-}
+
 
 input:checked+.slider:before {
   -webkit-transform: translateY(26px);
