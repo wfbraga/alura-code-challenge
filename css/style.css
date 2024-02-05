@@ -39,12 +39,14 @@ body {
 .nav__main__menu {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .section__text {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 90%;
   width: 60%;
   justify-content: space-evenly;
 }
@@ -52,7 +54,7 @@ body {
 .section__text__area {
   border: none;
   width: 90%;
-  height: 600px;
+  min-height: 70%;
   box-sizing: border-box;
   background-color: var(--color--background);
   color: var(--color-prymary);
@@ -145,7 +147,6 @@ body {
   max-width: 90px;
   min-width: 90px;
   min-height: 130px;
-
   display: flex;
   padding: 10px;
 }
@@ -174,7 +175,6 @@ body {
   background-position: center;
   background-position-y: 15%;
   background-repeat: no-repeat;
-
   background-size: 40%;
   -webkit-transition: .4s;
   transition: .4s;
@@ -233,13 +233,17 @@ input:checked+.slider:before {
 /** MEDIA QUERIES **/
 @media screen and (max-width: 768px) {
   body {
+    min-width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   .nav__main {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 5px;
   }
 
   .nav__main__menu {
@@ -248,15 +252,18 @@ input:checked+.slider:before {
   }
 
   .section__text {
+    flex-grow: 1;
     width: 100%;
   }
 
   .section__text__area {
+    flex-grow: 1;
     width: 100%;
   }
 
   .nav__encoding {
     width: 100%;
+    flex-wrap: wrap;
   }
 
   .btn-copiar {
@@ -274,6 +281,68 @@ input:checked+.slider:before {
   .aside__search-person {
     display: none;
   }
+
+  /** SLIDE BUTTONS 768px**/
+  .slide__container {
+    max-width: 130px;
+    min-width: 130px;
+    min-height: 90px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    background-position: left;
+    background-position-x: 85%;
+    background-size: 30%;
+  }
+
+  .slider-language {
+    background-image: url('/assets/es-lang-ffffff.png');
+  }
+
+  .slider:before {
+    bottom: 10px;
+  }
+
+  input:checked+.slider {
+    background-position: right;
+    background-position-x: 18%;
+  }
+
+  input:checked+.slider-theme {
+    background-image: url('/assets/sun-regular.png');
+  }
+
+  input:checked+.slider:before {
+    background-color: var(--color-prymary);
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    transform: translateX(40px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
 }
 
 @media screen and (max-width: 602px) {
@@ -288,13 +357,12 @@ input:checked+.slider:before {
 
   .section__text__area {
     width: 100%;
-    height: 400px;
   }
 }
 
 
 /** MEDIA QUERIES **/
-@media screen and (max-width: 378px) {
+@media screen and (max-width: 400px) {
   body {
     padding: 20px;
     display: flex;
@@ -304,10 +372,6 @@ input:checked+.slider:before {
   .nav__main {
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  .nav__main__menu {
-    display: none;
   }
 
   .section__text {
@@ -353,5 +417,68 @@ input:checked+.slider:before {
 
   .aside__search-person {
     display: none;
+  }
+
+  /** SLIDER BUTTONS 378px**/
+  .slide__container {
+    max-width: 90px;
+    min-width: 90px;
+    min-height: 60px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    background-position: left;
+    background-position-x: 85%;
+    background-size: 30%;
+  }
+
+  .slider-language {
+    background-image: url('/assets/es-lang-ffffff.png');
+  }
+
+  .slider:before {
+    height: 20px;
+    width: 20px;
+  }
+
+  input:checked+.slider {
+    background-position: right;
+    background-position-x: 18%;
+  }
+
+  input:checked+.slider-theme {
+    background-image: url('/assets/sun-regular.png');
+  }
+
+  input:checked+.slider:before {
+    background-color: var(--color-prymary);
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    transform: translateX(30px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
   }
 }
