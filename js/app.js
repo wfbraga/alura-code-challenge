@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const inputText = document.getElementById('inputText');
-  const outputPlace = document.getElementById('outputPlace');
+  const rootEl = document.documentElement;
+  const themeInputEl = document.getElementById('themeSwitch');
+  const languageInputEl = document.getElementById('lenguageSwitch');
+  const inputTextEl = document.getElementById('inputText');
+  const warningMessageEl = document.getElementById('warningMessage');
   const imgSearchPerson = document.getElementById('searchPerson');
   const initialMessage = document.getElementById('initialMessage');
+  const noMessageFoundEl = document.getElementById('noMessageFound');
+  const writeTextMessageEl = document.getElementById('writeTextMessage');
   const btnEncode = document.getElementById('btnEncode');
   const btnDecode = document.getElementById('btnDecode');
   const btnCopy = document.getElementById('btnCopy');
 
-  /** TRANSLATIONS **/
-  let portuguese = {
+
+  /** TRANSLATIONS OBJECTS**/
+  /**
+    Each object "key" represents is name to reffer the html element in wich it its value will be placed
+  **/
+  let portugueseBr = {
     typeHere: 'Digite seu texto aqui',
     warningMessage: 'Apenas letras minusculas e sem acento',
     encode: 'Criptografar',
@@ -28,39 +37,64 @@ document.addEventListener("DOMContentLoaded", function () {
     copy: 'Copiar',
   }
 
-  /** LANGUAGE SWITCH **
-  const languageSwitchEl = document.getElementById('languageSwitch');
-
-  function switchLanguage(e) {
-    if (e.target.checked) {
-      rootEl.style.setProperty('--color--background', '#1058af');
-      rootEl.style.setProperty('--color-prymary', '#ffffff');
-      rootEl.style.setProperty('--color-secondary', '#0A3871');
-      rootEl.style.setProperty('--color-shadow', '#0A3871');
+  /** LANGUAGE TRANSLATION **/
+  /** 
+      This function puts the transaction inside each specified element as per the
+    language parameter "lan" it receives that can be 'br' or 'sp'
+  **/
+  function translateLanguage(lang) {
+    if (lang == 'pt-br') {
+      inputTextEl.placeholder = portugueseBr.typeHere;
+      warningMessageEl.innerText = portugueseBr.warningMessage;
+      outputPlace.innerText = portugueseBr.typeHere;
+      btnEncode.innerText = portugueseBr.encode;
+      btnDecode.innerText = portugueseBr.decode;
+      noMessageFoundEl.innerText = portugueseBr.noMessage;
+      writeTextMessageEl.innerText = portugueseBr.writeMessage;
+      btnCopy.innerText = portugueseBr.copy;
     }
-    else {
-      rootEl.style.setProperty('--color--background', '#E9ECF8');
-      rootEl.style.setProperty('--color-prymary', '#0A3871');
-      rootEl.style.setProperty('--color-secondary', '#ffffff');
-      rootEl.style.setProperty('--color-shadow', '#d8d4d4');
+    else if (lang == 'sp') {
+      inputTextEl.placeholder = spanish.typeHere;
+      warningMessageEl.innerText = spanish.warningMessage;
+      outputPlace.innerHTML = spanish.typeHere;
+      btnEncode.innerText = spanish.encode;
+      btnDecode.innerText = spanish.decode;
+      noMessageFoundEl.innerText = spanish.noMessage;
+      writeTextMessageEl.innerText = spanish.writeMessage;
+      btnCopy.innerText = spanish.copy;
     }
   }
-  languageSwitchEl.addEventListener('change', switchLanguage, false);
-  inputText
-  warning
-  btnEncode
-  btnDecode
-  noMessageFound
-  writeTextMessage
-  btnCopy
+  /** LANGUAGE THEME SWITCH **/
+  /** 
+      A workaround to the fact that that when changing the theme in css and javascript there is a conflict in
+    background Image changes
+  **/
+  function switchLanguageTheme(e) {
+    const langSpan = 'sp'
+    const langPtBr = 'pt-br'
+    switch (true) {
+      case !themeInputEl.checked && !languageInputEl.checked:
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/es-lang-ffffff.png')";
+        translateLanguage(langPtBr);
+        break;
+      case !themeInputEl.checked && languageInputEl.checked:
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-0a3871.png')";
+        translateLanguage(langSpan);
+        break;
+      case themeInputEl.checked && !languageInputEl.checked:
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-0a3871.png')";
+        translateLanguage(langPtBr);
+        break;
+      case themeInputEl.checked && languageInputEl.checked:
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-ffffff.png')";
+        translateLanguage(langSpan);
+        break;
+    }
+  }
+  languageInputEl.addEventListener('change', switchLanguageTheme, false);
 
-  ** THEME SWITCH **/
-
-  const themeSwitchEl = document.getElementById('themeSwitch');
-  const rootEl = document.documentElement;
-  const languageSwitchClass = document.querySelector('.slider-language');
-  const languageSwitchClassDark = document.querySelector('input:checked+.slider-language');;
-
+  /** THEME SWITCH **/
+  const languageSpanSwitchClass = document.querySelector('.slider-language');
 
   function switchTheme(e) {
     if (e.target.checked) {
@@ -68,9 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
       rootEl.style.setProperty('--color-prymary', '#ffffff');
       rootEl.style.setProperty('--color-secondary', '#0A3871');
       rootEl.style.setProperty('--color-shadow', '#0A3871');
-      languageSwitchClass.style.backgroundImage = 'url("/assets/es-lang-0a3871.png")';
-      languageSwitchClassDark.style.backgroundImage = 'url("/assets/pt-lang-ffffff.png")';
-
+      if (languageInputEl.checked) {
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-ffffff.png')";
+      } else if (languageInputEl.checked == false) {
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/es-lang-0a3871.png')";
+      }
 
     }
     else {
@@ -78,20 +114,33 @@ document.addEventListener("DOMContentLoaded", function () {
       rootEl.style.setProperty('--color-prymary', '#0A3871');
       rootEl.style.setProperty('--color-secondary', '#ffffff');
       rootEl.style.setProperty('--color-shadow', '#d8d4d4');
-      languageSwitchClass.style.backgroundImage = 'url("/assets/es-lang-ffffff.png")';
-      languageSwitchClassDark.style.backgroundImage = 'url("/assets/pt-lang-0a3871.png")';
+      if (languageInputEl.checked) {
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-0a3871.png')";
+      } else if (languageInputEl.checked == false) {
+        languageSpanSwitchClass.style.backgroundImage = "url('/assets/es-lang-ffffff.png')";
+      }
     }
   }
-  themeSwitchEl.addEventListener('change', switchTheme, false);
+  themeInputEl.addEventListener('change', switchTheme, false);
+
 
   /** COPY TO CLIPBOARD **/
+  /** 
+  The btnCopy button is hidden until the moment you user the btnDecode button.
+  When the user clicks on the btnCopy button, the text in the outputPlace element is copied to the clipboard.
+**/
   function copyToClipboard() {
     const text = outputPlace.innerText;
-    inputText.value = text;
+    inputTextEl.value = text;
     navigator.clipboard.writeText(text);
     outputPlace.innerText = 'Copiado com sucesso!';
   }
 
+  /** EMCRYPTION SECTION**/
+  /** 
+      The .replace() method in JavaScript is used to replace a substring in a string with another substring.
+      It tirerates over each letter in the text and replace it with the new one.
+  **/
   function encodeText() {
     const text = inputText.value;
     const encodedText = text
@@ -115,7 +164,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return decodedText;
   }
-
+  /** PROCESS TEXT **/
+  /**
+      This function makes the text handling betwin encryption and decription gettin it,
+      encrypting using encodeText() and putting it on outputPlace or
+      decrypting using decodeText() and putting it back on textArea
+  **/
   function processText(process) {
     imgSearchPerson.style.display = 'none';
     initialMessage.style.display = 'none';

@@ -36,15 +36,9 @@ body {
   gap: 40px;
 }
 
-.nav__main__column-menu {
+.nav__main__menu {
   display: flex;
   flex-direction: column;
-}
-
-.nav__main__row-menu {
-  flex-direction: row;
-  align-self: flex-end;
-  display: none;
 }
 
 .section__text {
@@ -217,15 +211,9 @@ input:checked+.slider-theme {
   background-image: url('/assets/sun-regular.png');
 }
 
-input:checked+.slider-language {
-  background-image: url('/assets/br-lang-0a3871.png');
-}
-
 input:checked+.slider:before {
   background-color: var(--color-prymary);
 }
-
-
 
 input:checked+.slider:before {
   -webkit-transform: translateY(26px);
@@ -254,14 +242,9 @@ input:checked+.slider:before {
     justify-content: space-between;
   }
 
-  .nav__main__column-menu {
-    display: none;
-  }
-
-  .nav__main__row-menu {
+  .nav__main__menu {
+    display: flex;
     flex-direction: row;
-    align-self: flex-end;
-    display: block;
   }
 
   .section__text {
@@ -323,15 +306,7 @@ input:checked+.slider:before {
     justify-content: space-between;
   }
 
-  .nav__main__row-menu {
-    display: none;
-  }
-
-  .nav__main__column-menu {
-    display: none;
-  }
-
-  .nav__main__row-menu {
+  .nav__main__menu {
     display: none;
   }
 
