@@ -75,30 +75,53 @@ body {
   padding: 5px;
 }
 
+.exclamation-sign {
+  color: var(--color-secondary);
+  background-color: var(--color-prymary);
+  border-radius: 50%;
+  padding: 1px 7px;
+  font-weight: 800;
+}
+
 .btn-criptografar {
   width: 45%;
   height: 60px;
   border-radius: 24px;
+  border: 2px solid var(--color-secondary);
   background-color: var(--color-prymary);
   color: var(--color--background);
   text-align: center;
   line-height: 60px;
+  font-weight: 800;
+}
+
+.btn-criptografar:hover {
+  border: 2px solid var(--color-prymary);
+  background-color: var(--color-secondary);
+  color: var(--color-prymary);
 }
 
 .btn-descriptografar {
   width: 45%;
-  border: 1px solid var(--color-prymary);
+  border: 2px solid var(--color-prymary);
   height: 60px;
   border-radius: 24px;
   background-color: var(--color-secondary);
-  color: var(--color--prymary);
+  color: var(--color-prymary);
   text-align: center;
   line-height: 60px;
+  font-weight: 800;
+}
+
+.btn-descriptografar:hover {
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-prymary);
+  color: var(--color--background);
 }
 
 .btn-copiar {
   width: 70%;
-  border: 1px solid var(--color-prymary);
+  border: 2px solid var(--color-prymary);
   height: 60px;
   border-radius: 24px;
   background-color: var(--color--background);
@@ -109,13 +132,18 @@ body {
   display: none;
 }
 
+.btn-copiar:hover {
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-prymary);
+  color: var(--color--background);
+}
+
 .aside__output {
   display: flex;
   flex-wrap: wrap;
   width: 400px;
   min-height: 100%;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 60px 5px 60px 5px;
   justify-content: center;
   text-align: center;
   background-color: var(--color-secondary);

@@ -142,20 +142,26 @@ document.addEventListener("DOMContentLoaded", function () {
       It tirerates over each letter in the text and replace it with the new one.
   **/
   function encodeText() {
-    const text = inputText.value;
-    const encodedText = text
-      .replace(/e/g, 'enter')
-      .replace(/i/g, 'imes')
-      .replace(/a/g, 'ai')
-      .replace(/o/g, 'ober')
-      .replace(/u/g, 'ufat');
+    const str = inputTextEl.value;
 
-    return encodedText;
+    if (/[A-ZÀ-ÖØ-Þ]/.test(str)) {
+      return "Use apenas letras minúsculas e sem acento";
+    } else {
+
+      const encodedText = str
+        .replace(/e/g, 'enter')
+        .replace(/i/g, 'imes')
+        .replace(/a/g, 'ai')
+        .replace(/o/g, 'ober')
+        .replace(/u/g, 'ufat');
+
+      return encodedText;
+    }
   }
 
   function decodeText() {
-    const text = inputText.value;
-    const decodedText = text
+    const str = inputTextEl.value;
+    const decodedText = str
       .replace(/enter/g, 'e')
       .replace(/imes/g, 'i')
       .replace(/ai/g, 'a')
