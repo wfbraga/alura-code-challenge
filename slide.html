@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/571a766a70.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #e9ecf8;
+        }
+
+        .slide__container {
+            background-color: #eef0fa;
+
+            border-radius: 60px;
+            align-items: center;
+            justify-content: center;
+            max-width: 90px;
+            min-height: 130px;
+
+            display: flex;
+            padding: 10px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 100px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0A3871;
+            background-image: url('/assets/moon-solid.png');
+            background-position: center;
+            background-position-y: 15%;
+            background-repeat: no-repeat;
+
+            background-size: 40%;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 40px;
+            width: 40px;
+            left: 10px;
+            bottom: 8px;
+            background-color: #fff;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #fff;
+            background-image: url('/assets/sun-regular.png');
+            background-position: center;
+            background-position-y: 80%;
+            background-repeat: no-repeat;
+        }
+
+        input:checked+.slider:before {
+            background-color: #0A3871;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #0A3871;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateY(26px);
+            -ms-transform: translateY(26px);
+            transform: translateY(-42px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <i class="fa-solid fa-moon"></i>
+    <h2>Toggle Switch</h2>
+    <div class="slide__container">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></i></span>
+        </label>
+    </div>
+
+    <div class="slide__container">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="slide__container">
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <img src="assets/Menu.png" alt="Menu 1">
+
+
+</body>
+
+</html>
