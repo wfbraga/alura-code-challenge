@@ -209,11 +209,11 @@ body {
 }
 
 .slider-theme {
-  background-image: url('/assets/moon-solid.png');
+  background-image: url('../assets/moon-solid.png');
 }
 
 .slider-language {
-  background-image: url('/assets/es-lang-ffffff.png');
+  background-image: url('../assets/es-lang-ffffff.png');
 }
 
 .slider:before {
@@ -236,7 +236,7 @@ input:checked+.slider {
 }
 
 input:checked+.slider-theme {
-  background-image: url('/assets/sun-regular.png');
+  background-image: url('../assets/sun-regular.png');
 }
 
 input:checked+.slider:before {
@@ -337,7 +337,7 @@ input:checked+.slider:before {
   }
 
   .slider-language {
-    background-image: url('/assets/es-lang-ffffff.png');
+    background-image: url('../assets/es-lang-ffffff.png');
   }
 
   .slider:before {
@@ -350,7 +350,7 @@ input:checked+.slider:before {
   }
 
   input:checked+.slider-theme {
-    background-image: url('/assets/sun-regular.png');
+    background-image: url('../assets/sun-regular.png');
   }
 
   input:checked+.slider:before {
@@ -474,7 +474,7 @@ input:checked+.slider:before {
   }
 
   .slider-language {
-    background-image: url('/assets/es-lang-ffffff.png');
+    background-image: url('../assets/es-lang-ffffff.png');
   }
 
   .slider:before {
@@ -488,7 +488,7 @@ input:checked+.slider:before {
   }
 
   input:checked+.slider-theme {
-    background-image: url('/assets/sun-regular.png');
+    background-image: url('../assets/sun-regular.png');
   }
 
   input:checked+.slider:before {

@@ -74,19 +74,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const langPtBr = 'pt-br'
     switch (true) {
       case !themeInputEl.checked && !languageInputEl.checked:
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/es-lang-ffffff.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/es-lang-ffffff.png')";
         translateLanguage(langPtBr);
         break;
       case !themeInputEl.checked && languageInputEl.checked:
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-0a3871.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/br-lang-0a3871.png')";
         translateLanguage(langSpan);
         break;
       case themeInputEl.checked && !languageInputEl.checked:
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-0a3871.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/br-lang-0a3871.png')";
         translateLanguage(langPtBr);
         break;
       case themeInputEl.checked && languageInputEl.checked:
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-ffffff.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/br-lang-ffffff.png')";
         translateLanguage(langSpan);
         break;
     }
@@ -103,9 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
       rootEl.style.setProperty('--color-secondary', '#0A3871');
       rootEl.style.setProperty('--color-shadow', '#0A3871');
       if (languageInputEl.checked) {
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-ffffff.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/br-lang-ffffff.png')";
       } else if (languageInputEl.checked == false) {
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/es-lang-0a3871.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/es-lang-0a3871.png')";
       }
 
     }
@@ -115,9 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
       rootEl.style.setProperty('--color-secondary', '#ffffff');
       rootEl.style.setProperty('--color-shadow', '#d8d4d4');
       if (languageInputEl.checked) {
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/br-lang-0a3871.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/br-lang-0a3871.png')";
       } else if (languageInputEl.checked == false) {
-        languageSpanSwitchClass.style.backgroundImage = "url('/assets/es-lang-ffffff.png')";
+        languageSpanSwitchClass.style.backgroundImage = "url('../assets/es-lang-ffffff.png')";
       }
     }
   }
